@@ -186,7 +186,7 @@ main(int argc, char **argv)
 
 	if (strcmp(cmd_name, "gst_loopback") == 0)
 		pipe_proc = "nvdec ! gldownload ! videoconvert n-thread=0 ! "
-			"video/x-raw,format=I420 ! identity drop-allocation=true !"
+			"video/x-raw,format=YV12 ! identity drop-allocation=true !"
 			"v4l2sink device=/dev/video2 qos=false sync=false";
 	else
 		pipe_proc = " nvdec ! glimagesink qos=false sync=false";
